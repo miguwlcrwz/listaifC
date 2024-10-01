@@ -26,7 +26,7 @@ Tratamento: "Consulte um médico e monitore a temperatura."
     if (temperatura < 37.5){
         printf("nenhum tratamento necessário");
     }
-    else if (temperatura < 38.5 && (dias <= 3 && dias >= 0) ){ 
+    else if (temperatura < 38.5 && (dias <= 2 && dias >= 1) ){ 
          printf("mantenha-se hidratado e descanse");
     } else { 
         printf("consulte um médico e monitore a temperatura");

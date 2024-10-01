@@ -10,10 +10,10 @@ int main (void){
     scanf("%f",&x);
     printf("qual a cordenada y? ");
     scanf("%f",&y);
-// calcular distância 
+    // calcular distância 
     float distancia = sqrt (pow(x,2) + pow(y,2));
     printf("a distãncia do ponto ao centro é: %.2f",distancia);
-// encontrar o quadrante 
+    // encontrar o quadrante 
     if (x > 0 && y > 0){
         printf("\no ponto está no primeiro quadrante");
     } 

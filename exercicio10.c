@@ -17,46 +17,35 @@ b) 8% sobre o custo total da obra (ct), se 0,5 &lt;= r &lt;= 1,5
 10% sobre o custo total de mão de obra (cmo * tc), se r &lt; 0,5*/
 
 int main (void){
-    float gm,tc,cmo,ac,ct,precoI,lucro,cmoA,margem;
+    float valorMaterial, tempoConstrucao, custoMaoObra, areaConstruida, custoTotal, precoVenda, lucro, custoMaoObraAjustado, margemLucro;
     printf("qual o valor total gasto com o material? ");
-    scanf("%f",&gm);
+    scanf("%f",&valorMaterial);
     printf("quanto tempo durou a construção? (em horas)");
-    scanf("%f",&tc);
+    scanf("%f",&tempoConstrucao);
     printf("qual o custo por hora da mão de obra? ");
-    scanf("%f",&cmo);
+    scanf("%f",&custoMaoObra);
     printf("quantos metros tem a obra? ");
-    scanf("%f",&ac);
-
-// função if para calcular o acréscimo
-
-    if ((ac / tc) < 0.035){
-        cmoA = ((0.3 * cmo) + cmo) * tc;
-    } 
-    else { cmoA = cmo * tc;
-    }
-
-// calculando o custo total
-
-    ct = gm + cmoA * tc;
-
-// calculando o lucro 
-
-    lucro = gm  / (cmo * tc); 
-    if (lucro > 1.5){
-        margem = gm * 0.05;
-    } else if (0.5 <= lucro && lucro <= 1.5){
-        margem = ct * 0.08;
+    scanf("%f",&areaConstruida);
+    // cálculo do acréscimo de 30% no custo de mão de obra
+    if ((areaConstruida / tempoConstrucao) < 0.035){
+        custoMaoObraAjustado = ((0.3 * custoMaoObra) + custoMaoObra) * tempoConstrucao;
     } else {
-        margem = cmoA * 0.1;
+        custoMaoObraAjustado = custoMaoObra * tempoConstrucao;
     }
-
-// calculo para saber o preço por metro quadrado
-
-    precoI = (ct + margem) / ac;
-
-// exibir 
-
-    printf("o preço da venda por metro quadrado é: %.2f",precoI);
+    // cálculo do custo total da obra
+    custoTotal = valorMaterial + custoMaoObraAjustado;
+    // cálculo da margem de lucro
+    lucro = valorMaterial / (custoMaoObra * tempoConstrucao);
+    if (lucro > 1.5){
+        margemLucro = valorMaterial * 0.05;
+    } else if (0.5 <= lucro && lucro <= 1.5){
+        margemLucro = custoTotal * 0.08;
+    } else {
+        margemLucro = custoMaoObraAjustado * 0.1;
+    }
+    // cálculo do preço de venda do metro quadrado
+    precoVenda = (custoTotal + margemLucro) / areaConstruida;
+    // exibição do resultado
+    printf("O preço da venda por metro quadrado é: %.2f",precoVenda);
     return 0;
-    
 }
