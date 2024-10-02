@@ -21,7 +21,7 @@ int main (void){
     if (idade >= 18 || (idade < 18 && altura > 150.0)){  
         printf("pode entrar!!\n");
     }
-    if (idade > 70){
+    if (idade > 65){
         printf("cuidado com a velocidade!!");
     }
     return 0;

@@ -12,7 +12,7 @@ Por último, a construtora irá somar ao custo total da obra (ct) a sua margem d
 assim, o preço de venda do imóvel. O cálculo da margem de lucro é descrito a seguir. .
 Seja r a razão entre o valor gasto com o material (gm) e o custo total de mão de obra (cmo * tc). A
 margem de lucro será de
-a) 5% sobre o gasto com o material (gm), se r for maior que 1,5;
+a) 5% sobre o gasto com o material (gm), se r &gt; 1,5;
 b) 8% sobre o custo total da obra (ct), se 0,5 &lt;= r &lt;= 1,5
 10% sobre o custo total de mão de obra (cmo * tc), se r &lt; 0,5*/
 
